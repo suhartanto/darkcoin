@@ -9,7 +9,6 @@
 #include "masternodeman.h"
 #include "instantx.h"
 #include "ui_interface.h"
-;
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/fstream.hpp>
@@ -45,7 +44,7 @@ int RequestedMasterNodeList = 0;
         udjinm6   - udjinm6@darkcoin.io
 */
 
-void CDarksendPool::ProcessMessageDarksend(CNode* pfrom, std::string& strCommand, CDataStream& vRecv)
+void inline CDarksendPool::ProcessMessageDarksend(CNode* pfrom, std::string& strCommand, CDataStream& vRecv)
 {
     if(fLiteMode) return; //disable all Darksend/Masternode related functionality
     if(IsInitialBlockDownload()) return;
